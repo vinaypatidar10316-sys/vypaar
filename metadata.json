@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix SMARTVyapaar",
+  "description": "Manage, Sell and Grow — Your Complete Business Partner for modern retail stores.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

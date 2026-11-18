@@ -1,0 +1,233 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Bricolage Grotesque", "Noto Sans Devanagari", "Noto Sans Gujarati", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Noto Sans Devanagari", "Noto Sans Gujarati", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  body,
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+@keyframes sv-spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sv-spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes sv-sign-swing {
+  0%, 100% {
+    transform: rotate(-3.2deg);
+  }
+  50% {
+    transform: rotate(3.2deg);
+  }
+}
+
+@keyframes sv-float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes sv-shimmer-line {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(240%);
+  }
+}
+
+@keyframes sv-blink-line {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  45%, 55% {
+    opacity: 0.12;
+    transform: scaleX(0.72);
+  }
+}
+
+@keyframes sv-blink-aura {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scaleX(1) scaleY(1);
+  }
+  45%, 55% {
+    opacity: 0.08;
+    transform: scaleX(0.68) scaleY(0.8);
+  }
+}
+
+@keyframes sv-glow-breathe {
+  0%, 100% {
+    opacity: 0.72;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes sv-curve-shimmer {
+  0% {
+    stroke-dashoffset: 30;
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.95;
+  }
+  58% {
+    opacity: 0.95;
+  }
+  70%, 100% {
+    stroke-dashoffset: -105;
+    opacity: 0;
+  }
+}
+
+@keyframes sv-curve-pulse {
+  0%, 100% {
+    opacity: 0.86;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes sv-glint-sweep {
+  0%, 15% {
+    transform: translateX(-140%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.95;
+  }
+  55% {
+    transform: translateX(260%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(260%);
+    opacity: 0;
+  }
+}
+
+@keyframes sv-luminaire {
+  0%, 100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-sv-spin {
+  animation: sv-spin-slow 2.4s linear infinite;
+}
+
+.animate-sv-spin-reverse {
+  animation: sv-spin-reverse 3.8s linear infinite;
+}
+
+.animate-sv-swing {
+  transform-origin: 50% 0%;
+  animation: sv-sign-swing 3.6s ease-in-out infinite;
+}
+
+.animate-sv-float {
+  animation: sv-float-gentle 4.2s ease-in-out infinite;
+}
+
+.animate-sv-shimmer {
+  animation: sv-shimmer-line 2.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.animate-sv-blink-line {
+  animation: sv-blink-line 1.45s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.animate-sv-blink-aura {
+  animation: sv-blink-aura 1.45s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.animate-sv-breathe {
+  animation: sv-glow-breathe 4.5s ease-in-out infinite;
+}
+
+.animate-sv-curve-shimmer {
+  animation: sv-curve-shimmer 3.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.animate-sv-curve-pulse {
+  animation: sv-curve-pulse 2.8s ease-in-out infinite;
+}
+
+.animate-sv-glint-sweep {
+  animation: sv-glint-sweep 1.45s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.animate-sv-luminaire {
+  animation: sv-luminaire 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sv-spin,
+  .animate-sv-spin-reverse,
+  .animate-sv-swing,
+  .animate-sv-float,
+  .animate-sv-shimmer,
+  .animate-sv-blink-line,
+  .animate-sv-blink-aura,
+  .animate-sv-breathe,
+  .animate-sv-curve-shimmer,
+  .animate-sv-curve-pulse,
+  .animate-sv-glint-sweep,
+  .animate-sv-luminaire {
+    animation: none !important;
+  }
+}
