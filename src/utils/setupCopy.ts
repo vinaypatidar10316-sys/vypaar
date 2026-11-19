@@ -8,6 +8,8 @@ export interface SetupLocalizedCopy {
   ownerNamePlaceholder: string;
   mobileLabel: string;
   mobilePlaceholder: string;
+  emailLabel: string;
+  emailPlaceholder: string;
   sendOtp: string;
   resendOtp: string;
   verified: string;
@@ -25,8 +27,11 @@ export interface SetupLocalizedCopy {
   businessTypeLabel: string;
   addressLabel: string;
   addressPlaceholder: string;
-  cityPlaceholder: string;
+  pinLabel: string;
   pinPlaceholder: string;
+  cityLabel: string;
+  cityPlaceholder: string;
+  pinHint: string;
 
   categoryHeading: string;
   categorySub: string;
@@ -34,33 +39,39 @@ export interface SetupLocalizedCopy {
   legalHeading: string;
   legalSub: string;
   gstStatusLabel: string;
+  gstRegisteredOption: string;
+  gstNotRegisteredOption: string;
   gstinLabel: string;
   panLabel: string;
 
-  billingHeading: string;
-  billingSub: string;
-  invoiceFormatLabel: string;
-  invoicePrefixLabel: string;
-  startingNoLabel: string;
-
   paymentHeading: string;
+  paymentSetupTag: string;
   paymentSub: string;
-  upiLabel: string;
-  upiPlaceholder: string;
-  securityNote: string;
-
-  inventoryHeading: string;
-  inventorySub: string;
-  maintainStockCheck: string;
-  barcodesCheck: string;
-  weightCheck: string;
-  lowStockCheck: string;
+  upiSectionTitle: string;
+  upiEnabledStatus: string;
+  upiVerifiedStatus: string;
+  upiIdLabel: string;
+  upiIdPlaceholder: string;
+  upiQrLabel: string;
+  verifyUpiBtn: string;
+  bankSectionTitle: string;
+  bankNotConnectedStatus: string;
+  bankConnectedStatus: string;
+  accountHolderLabel: string;
+  accountHolderPlaceholder: string;
+  accountNumberLabel: string;
+  accountNumberPlaceholder: string;
+  ifscLabel: string;
+  ifscPlaceholder: string;
+  verifyBankBtn: string;
 
   readyHeading: string;
   readySub: string;
   openDashboard: string;
   saveAndContinue: string;
   back: string;
+  alreadyHaveAccountPrompt: string;
+  loginLinkAction: string;
 }
 
 export const SETUP_COPY: Record<LanguageCode, SetupLocalizedCopy> = {
@@ -70,7 +81,7 @@ export const SETUP_COPY: Record<LanguageCode, SetupLocalizedCopy> = {
       'Shop & Location',
       'Business Category',
       'Legal & Tax (GST)',
-      'Inventory Settings',
+      'Payment Settings',
       'Ready for Business',
     ],
     ownerAccountHeading: '1. Owner Account Details',
@@ -79,6 +90,8 @@ export const SETUP_COPY: Record<LanguageCode, SetupLocalizedCopy> = {
     ownerNamePlaceholder: 'e.g. Ramesh Patel',
     mobileLabel: 'Mobile Number *',
     mobilePlaceholder: '10-digit mobile number',
+    emailLabel: 'Email ID *',
+    emailPlaceholder: 'e.g. owner@yourshop.com',
     sendOtp: 'Send OTP',
     resendOtp: 'Resend OTP',
     verified: 'Verified ✓',
@@ -90,14 +103,17 @@ export const SETUP_COPY: Record<LanguageCode, SetupLocalizedCopy> = {
     passwordPlaceholder: 'At least 4 characters',
 
     shopDetailsHeading: '2. Business & Shop Details',
-    shopDetailsSub: 'Tell us your trade name and store address.',
+    shopDetailsSub: 'Enter your trade name, address, PIN code, and city.',
     shopNameLabel: 'Shop / Business Name *',
     shopNamePlaceholder: 'e.g. Shree Ram General Store',
     businessTypeLabel: 'Business Type *',
-    addressLabel: 'Shop Address & City *',
+    addressLabel: 'Shop Address *',
     addressPlaceholder: 'Market Road, Opp. SBI Bank',
-    cityPlaceholder: 'City / District',
-    pinPlaceholder: 'PIN Code',
+    pinLabel: 'PIN Code *',
+    pinPlaceholder: '6-digit PIN',
+    cityLabel: 'City *',
+    cityPlaceholder: 'Select or search city',
+    pinHint: 'Enter 6-digit PIN first to auto-fill city, or select from the list.',
 
     categoryHeading: '3. Business Category',
     categorySub: 'Select one or more categories that match your inventory and billing requirements.',
@@ -105,33 +121,39 @@ export const SETUP_COPY: Record<LanguageCode, SetupLocalizedCopy> = {
     legalHeading: '4. Legal & Tax Information',
     legalSub: 'GST registration status is mandatory. If not registered, PAN number is required.',
     gstStatusLabel: 'GST Registration Status *',
+    gstRegisteredOption: 'GST Registration',
+    gstNotRegisteredOption: 'Non Registration',
     gstinLabel: 'GSTIN (15-digit GST Number) *',
-    panLabel: 'PAN Number (Mandatory when Not Registered) *',
+    panLabel: 'PAN Number *',
 
-    billingHeading: '5. Billing Configuration',
-    billingSub: 'Determine how invoices and estimates are generated.',
-    invoiceFormatLabel: 'Default Invoice Document Type',
-    invoicePrefixLabel: 'Invoice Prefix',
-    startingNoLabel: 'Starting Number',
-
-    paymentHeading: '6. Payments & Bank Details',
-    paymentSub: 'Set up UPI QR codes and accepted payment modes. (Optional initially)',
-    upiLabel: 'UPI ID (Google Pay / PhonePe / Paytm)',
-    upiPlaceholder: 'shopname@okhdfcbank',
-    securityNote: '🔒 Note: SMARTVyapaar never asks for your UPI PIN, ATM PIN, or banking passwords.',
-
-    inventoryHeading: '5. Inventory Configuration',
-    inventorySub: 'Configure stock management and barcode scanning preferences.',
-    maintainStockCheck: 'Do you maintain stock?',
-    barcodesCheck: 'Do you use barcodes?',
-    weightCheck: 'Sell products by weight (kg/g)?',
-    lowStockCheck: 'Enable low-stock alerts?',
+    paymentHeading: 'Payment Settings',
+    paymentSetupTag: 'Setup',
+    paymentSub: 'Configure how your shop receives payments.',
+    upiSectionTitle: 'UPI Payments',
+    upiEnabledStatus: 'Enabled',
+    upiVerifiedStatus: 'Verified',
+    upiIdLabel: 'UPI ID *',
+    upiIdPlaceholder: 'yourshop@upi',
+    upiQrLabel: 'UPI QR code',
+    verifyUpiBtn: 'Verify UPI ID',
+    bankSectionTitle: 'Bank Account',
+    bankNotConnectedStatus: 'Not connected',
+    bankConnectedStatus: 'Verified',
+    accountHolderLabel: 'Account holder name *',
+    accountHolderPlaceholder: 'e.g. Rameshbhai Patel',
+    accountNumberLabel: 'Account number *',
+    accountNumberPlaceholder: 'Enter bank account number',
+    ifscLabel: 'IFSC code *',
+    ifscPlaceholder: 'e.g. HDFC0001234',
+    verifyBankBtn: 'Verify Bank Details',
 
     readyHeading: "You're Ready for Business!",
     readySub: 'Your store is fully configured. Click below to open your business dashboard.',
-    openDashboard: 'Open Dashboard 🚀',
+    openDashboard: 'Open Dashboard',
     saveAndContinue: 'Save & Continue',
     back: 'Back',
+    alreadyHaveAccountPrompt: 'Already have an account?',
+    loginLinkAction: 'Login',
   },
   hi: {
     stepTitles: [
@@ -139,7 +161,7 @@ export const SETUP_COPY: Record<LanguageCode, SetupLocalizedCopy> = {
       'दुकान और पता',
       'व्यापार श्रेणी',
       'कानूनी और टैक्स (GST)',
-      'इन्वेंट्री सेटिंग्स',
+      'भुगतान सेटिंग्स',
       'दुकान तैयार है',
     ],
     ownerAccountHeading: '1. मालिक खाता विवरण',
@@ -148,6 +170,8 @@ export const SETUP_COPY: Record<LanguageCode, SetupLocalizedCopy> = {
     ownerNamePlaceholder: 'जैसे: रमेश पटेल',
     mobileLabel: 'मोबाइल नंबर *',
     mobilePlaceholder: '10 अंकों का मोबाइल नंबर',
+    emailLabel: 'ईमेल आईडी *',
+    emailPlaceholder: 'जैसे: owner@yourshop.com',
     sendOtp: 'ओटीपी भेजें',
     resendOtp: 'पुनः भेजें',
     verified: 'सत्यापित ✓',
@@ -159,14 +183,17 @@ export const SETUP_COPY: Record<LanguageCode, SetupLocalizedCopy> = {
     passwordPlaceholder: 'कम से कम 4 अक्षर',
 
     shopDetailsHeading: '2. व्यापार और दुकान विवरण',
-    shopDetailsSub: 'अपनी दुकान का नाम और पता दर्ज करें।',
+    shopDetailsSub: 'अपनी दुकान का नाम, पता, पिन कोड और शहर दर्ज करें।',
     shopNameLabel: 'दुकान / व्यापार का नाम *',
     shopNamePlaceholder: 'जैसे: श्री राम जनरल स्टोर',
     businessTypeLabel: 'व्यापार का प्रकार *',
-    addressLabel: 'दुकान का पता और शहर *',
+    addressLabel: 'दुकान का पता *',
     addressPlaceholder: 'मार्केट रोड, एसबीआई बैंक के सामने',
-    cityPlaceholder: 'शहर / जिला',
-    pinPlaceholder: 'पिन कोड',
+    pinLabel: 'पिन कोड *',
+    pinPlaceholder: '6-अंकों का पिन',
+    cityLabel: 'शहर *',
+    cityPlaceholder: 'शहर चुनें या खोजें',
+    pinHint: 'शहर अपने आप भरने के लिए पहले 6 अंकों का पिन कोड डालें या सूची से चुनें।',
 
     categoryHeading: '3. व्यापार श्रेणी',
     categorySub: 'अपनी इन्वेंट्री और बिलिंग आवश्यकताओं के अनुसार एक या अधिक श्रेणियां चुनें।',
@@ -174,33 +201,39 @@ export const SETUP_COPY: Record<LanguageCode, SetupLocalizedCopy> = {
     legalHeading: '4. कानूनी और टैक्स जानकारी',
     legalSub: 'जीएसटी पंजीकरण स्थिति अनिवार्य है। यदि पंजीकृत नहीं हैं, तो पैन नंबर आवश्यक है।',
     gstStatusLabel: 'जीएसटी पंजीकरण स्थिति *',
+    gstRegisteredOption: 'GST पंजीकरण (GST Registration)',
+    gstNotRegisteredOption: 'गैर-पंजीकरण (Non Registration)',
     gstinLabel: 'जीएसटीआईएन (15-अंकों का जीएसटी नंबर) *',
-    panLabel: 'पैन नंबर (बिना जीएसटी पंजीकरण के अनिवार्य) *',
+    panLabel: 'पैन नंबर *',
 
-    billingHeading: '5. बिलिंग कॉन्फ़िगरेशन',
-    billingSub: 'निर्धारित करें कि इनवॉइस और एस्टीमेट कैसे जनरेट होंगे।',
-    invoiceFormatLabel: 'डिफ़ॉल्ट इनवॉइस दस्तावेज़ प्रकार',
-    invoicePrefixLabel: 'इनवॉइस प्रिफिक्स',
-    startingNoLabel: 'शुरुआती नंबर',
-
-    paymentHeading: '6. भुगतान और बैंक विवरण',
-    paymentSub: 'यूपीआई क्यूआर कोड और स्वीकार्य भुगतान मोड सेट करें।',
-    upiLabel: 'यूपीआई आईडी (Google Pay / PhonePe / Paytm)',
-    upiPlaceholder: 'shopname@okhdfcbank',
-    securityNote: '🔒 नोट: SMARTVyapaar कभी भी आपका यूपीआई पिन, एटीएम पिन या पासवर्ड नहीं मांगता है।',
-
-    inventoryHeading: '5. इन्वेंट्री कॉन्फ़िगरेशन',
-    inventorySub: 'स्टॉक प्रबंधन और बारकोड स्कैनिंग प्राथमिकताएं सेट करें।',
-    maintainStockCheck: 'क्या आप स्टॉक रखते हैं?',
-    barcodesCheck: 'क्या आप बारकोड का उपयोग करते हैं?',
-    weightCheck: 'क्या वजन के हिसाब से उत्पाद बेचते हैं (किलो/ग्राम)?',
-    lowStockCheck: 'कम स्टॉक होने पर अलर्ट चालू करें?',
+    paymentHeading: 'भुगतान सेटिंग्स',
+    paymentSetupTag: 'सेटअप',
+    paymentSub: 'तय करें कि आपकी दुकान को भुगतान कैसे प्राप्त होगा।',
+    upiSectionTitle: 'UPI भुगतान',
+    upiEnabledStatus: 'सक्रिय',
+    upiVerifiedStatus: 'सत्यापित',
+    upiIdLabel: 'UPI आईडी *',
+    upiIdPlaceholder: 'yourshop@upi',
+    upiQrLabel: 'UPI QR कोड',
+    verifyUpiBtn: 'UPI आईडी सत्यापित करें',
+    bankSectionTitle: 'बैंक खाता',
+    bankNotConnectedStatus: 'कनेक्ट नहीं है',
+    bankConnectedStatus: 'सत्यापित',
+    accountHolderLabel: 'खाताधारक का नाम *',
+    accountHolderPlaceholder: 'जैसे: रमेशभाई पटेल',
+    accountNumberLabel: 'खाता संख्या *',
+    accountNumberPlaceholder: 'बैंक खाता संख्या दर्ज करें',
+    ifscLabel: 'IFSC कोड *',
+    ifscPlaceholder: 'जैसे: HDFC0001234',
+    verifyBankBtn: 'बैंक विवरण सत्यापित करें',
 
     readyHeading: 'आप व्यापार के लिए तैयार हैं!',
     readySub: 'आपका स्टोर पूरी तरह से सेट हो गया है। डैशबोर्ड खोलने के लिए नीचे क्लिक करें।',
-    openDashboard: 'डैशबोर्ड खोलें 🚀',
+    openDashboard: 'डैशबोर्ड खोलें',
     saveAndContinue: 'सहेजें और आगे बढ़ें',
     back: 'पीछे',
+    alreadyHaveAccountPrompt: 'पहले से खाता है?',
+    loginLinkAction: 'लॉगिन करें',
   },
   gu: {
     stepTitles: [
@@ -208,7 +241,7 @@ export const SETUP_COPY: Record<LanguageCode, SetupLocalizedCopy> = {
       'દુકાન અને સ્થળ',
       'વ્યાપાર શ્રેણી',
       'કાનૂની અને ટેક્સ (GST)',
-      'ઇન્વેન્ટરી સેટિંગ્સ',
+      'ચુકવણી સેટિંગ્સ',
       'સ્ટોર તૈયાર છે',
     ],
     ownerAccountHeading: '1. માલિક ખાતાની વિગતો',
@@ -217,6 +250,8 @@ export const SETUP_COPY: Record<LanguageCode, SetupLocalizedCopy> = {
     ownerNamePlaceholder: 'દા.ત. રમેશ પટેલ',
     mobileLabel: 'મોબાઇલ નંબર *',
     mobilePlaceholder: '10 અંકનો મોબાઇલ નંબર',
+    emailLabel: 'ઈમેલ આઈડી *',
+    emailPlaceholder: 'દા.ત. owner@yourshop.com',
     sendOtp: 'ઓટીપી મોકલો',
     resendOtp: 'ફરીથી મોકલો',
     verified: 'ચકાસાયેલ ✓',
@@ -228,14 +263,17 @@ export const SETUP_COPY: Record<LanguageCode, SetupLocalizedCopy> = {
     passwordPlaceholder: 'ઓછામાં ઓછા 4 અક્ષર',
 
     shopDetailsHeading: '2. વ્યાપાર અને દુકાનની વિગતો',
-    shopDetailsSub: 'તમારી દુકાનનું નામ અને સરનામું જણાવો.',
+    shopDetailsSub: 'તમારી દુકાનનું નામ, સરનામું, પિન કોડ અને શહેર દાખલ કરો.',
     shopNameLabel: 'દુકાન / વ્યાપારનું નામ *',
     shopNamePlaceholder: 'દા.ત. શ્રી રામ જનરલ સ્ટોર',
     businessTypeLabel: 'વ્યાપારનો પ્રકાર *',
-    addressLabel: 'દુકાનનું સરનામું અને શહેર *',
+    addressLabel: 'દુકાનનું સરનામું *',
     addressPlaceholder: 'માર્કેટ રોડ, એસબીઆઈ બેંક સામે',
-    cityPlaceholder: 'શહેર / જિલ્લો',
-    pinPlaceholder: 'પિન કોડ',
+    pinLabel: 'પિન કોડ *',
+    pinPlaceholder: '6-અંકનો પિન',
+    cityLabel: 'શહેર *',
+    cityPlaceholder: 'શહેર પસંદ કરો અથવા શોધો',
+    pinHint: 'શહેર આપમેળે ભરવા માટે પહેલા 6-અંકનો પિન કોડ નાખો અથવા યાદીમાંથી પસંદ કરો.',
 
     categoryHeading: '3. વ્યાપાર શ્રેણી',
     categorySub: 'તમારી ઇન્વેન્ટરી અને બિલિંગ જરૂરિયાતો મુજબ એક કે વધુ શ્રેણીઓ પસંદ કરો.',
@@ -243,32 +281,38 @@ export const SETUP_COPY: Record<LanguageCode, SetupLocalizedCopy> = {
     legalHeading: '4. કાનૂની અને ટેક્સ માહિતી',
     legalSub: 'જીએસટી નોંધણી સ્થિતિ ફરજિયાત છે. જો નોંધાયેલ નથી, તો પાન નંબર આવશ્યક છે.',
     gstStatusLabel: 'જીએસટી નોંધણી સ્થિતિ *',
+    gstRegisteredOption: 'GST નોંધણી (GST Registration)',
+    gstNotRegisteredOption: 'બિન-નોંધણી (Non Registration)',
     gstinLabel: 'જીએસટીઆઈએન (15-અંકનો જીએસટી નંબર) *',
-    panLabel: 'પાન નંબર (બિન-નોંધાયેલ માટે ફરજિયાત) *',
+    panLabel: 'પાન નંબર *',
 
-    billingHeading: '5. બિલિંગ ગોઠવણી',
-    billingSub: 'નક્કી કરો કે ઇનવોઇસ અને એસ્ટીમેટ કેવી રીતે જનરેટ થશે.',
-    invoiceFormatLabel: 'ડિફોલ્ટ ઇનવોઇस દસ્તાવેજ પ્રકાર',
-    invoicePrefixLabel: 'ઇનવોઇસ પ્રિફિક્સ',
-    startingNoLabel: 'શરૂઆતનો નંબર',
-
-    paymentHeading: '6. ચુકવણી અને બેંક વિગતો',
-    paymentSub: 'યુપીઆઈ ક્યૂઆર કોડ અને સ્વીકાર્ય ચુકવણી મોડ ગોઠવો.',
-    upiLabel: 'યુપીઆઈ આઈડી (Google Pay / PhonePe / Paytm)',
-    upiPlaceholder: 'shopname@okhdfcbank',
-    securityNote: '🔒 નોંધ: SMARTVyapaar ક્યારેય તમારો યુપીઆઈ પિન, એટીએમ પિન કે પાસવર્ડ માંગતું નથી.',
-
-    inventoryHeading: '5. ઇન્વેન્ટરી ગોઠવણી',
-    inventorySub: 'સ્ટોક મેનેજમેન્ટ અને બારકોડ સ્કેનિંગ પ્રાથમિકતાઓ ગોઠવો.',
-    maintainStockCheck: 'શું તમે સ્ટોક રાખો છો?',
-    barcodesCheck: 'શું તમે બારકોડ વાપરો છો?',
-    weightCheck: 'શું વજનના આધારે પ્રોડક્ટ વેચો છો (કિલો/ગ્રામ)?',
-    lowStockCheck: 'ઓછા સ્ટોક પર એલર્ટ ચાલુ રાખવું છે?',
+    paymentHeading: 'ચુકવણી સેટિંગ્સ',
+    paymentSetupTag: 'સેટઅપ',
+    paymentSub: 'તમારી દુકાન ચુકવણી કેવી રીતે મેળવશે તે ગોઠવો.',
+    upiSectionTitle: 'UPI ચુકવણી',
+    upiEnabledStatus: 'સક્રિય',
+    upiVerifiedStatus: 'ચકાસાયેલ',
+    upiIdLabel: 'UPI આઈડી *',
+    upiIdPlaceholder: 'yourshop@upi',
+    upiQrLabel: 'UPI QR કોડ',
+    verifyUpiBtn: 'UPI આઈડી ચકાસો',
+    bankSectionTitle: 'બેંક ખાતું',
+    bankNotConnectedStatus: 'કનેક્ટ નથી',
+    bankConnectedStatus: 'ચકાસાયેલ',
+    accountHolderLabel: 'ખાતાધારકનું નામ *',
+    accountHolderPlaceholder: 'દા.ત. રમેશભાઈ પટેલ',
+    accountNumberLabel: 'ખાતા નંબર *',
+    accountNumberPlaceholder: 'બેંક ખાતા નંબર દાખલ કરો',
+    ifscLabel: 'IFSC કોડ *',
+    ifscPlaceholder: 'દા.ત. HDFC0001234',
+    verifyBankBtn: 'બેંક વિગતો ચકાસો',
 
     readyHeading: 'તમે વ્યાપાર માટે તૈયાર છો!',
     readySub: 'તમારો સ્ટોર પૂરી રીતે સેટ થઈ ગયો છે. ડેશબોર્ડ ખોલવા માટે નીચે ક્લિક કરો.',
-    openDashboard: 'ડેશબોર્ડ ખોલો 🚀',
+    openDashboard: 'ડેશબોર્ડ ખોલો',
     saveAndContinue: 'સાચવો અને આગળ વધો',
     back: 'પાછળ',
+    alreadyHaveAccountPrompt: 'પહેલેથી ખાતું છે?',
+    loginLinkAction: 'લૉગિન કરો',
   },
 };

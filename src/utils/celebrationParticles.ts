@@ -1,11 +1,11 @@
 export const CELEBRATION_PALETTE = [
-  '#059669', // Emerald Jade
-  '#10B981', // Bright Emerald
-  '#047857', // Deep Jade
-  '#D97706', // Brushed Gold
-  '#F59E0B', // Champagne Amber
-  '#FDE68A', // Soft Gold Highlight
-  '#A7F3D0', // Jade Mist
+  '#0B132B', // Brand Navy
+  '#2563EB', // Primary Royal Blue
+  '#3B82F6', // Soft Royal Blue
+  '#EFF6FF', // Ice Blue
+  '#16865D', // Success Green
+  '#60A5FA', // Light Sky Blue
+  '#1D4ED8', // Deep Royal Blue
 ] as const;
 
 export type ParticleShape = 'ribbon' | 'sparkle' | 'dot';
